@@ -10,21 +10,16 @@ const start = () => {
 // This variabe is defining the html studentForm and giving the Form an id  
 const studentForm = () => {
     const domString = `
-    <form>       
-    <label for="name">Student Name:</label><br>
-        <input type="text" required id="name" name="name" value=""><br>
-        <button type="submit" class="btn btn-primary">Submit</button>  
-        </form>    
+             <label for="name">Student Name:</label><br>
+        <input type="text" id="name" name="name" value=""><br>
+        <button id="sort" onclick="sortStudent()" class="btn btn-primary">Submit</button>  
      `;
 
-
     renderToDom("#studentForm", domString);
-    document.querySelector("form").addEventListener("submit",sortStudent) 
 };
 
 //Now that I created the Array I need to sort the Students/push to StudentsName to the array  
-const sortStudent = (event) => {
-    event.preventDefault();
+const sortStudent = () => {
     let nameinput = document.getElementById("name");
     // console.log(nameinput.value);
     let house=gethouse();
